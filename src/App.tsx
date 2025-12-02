@@ -1,20 +1,24 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import PhoneFrame from './components/Phone/PhoneFrame';
-import LockScreen from './components/Phone/LockScreen';
-import HomeScreen from './components/Phone/HomeScreen';
-import SettingsPage from './components/Settings/SettingsPage';
-import NotificationToast from './components/Notifications/NotificationToast';
-import NotificationDetail from './components/Notifications/NotificationDetail';
-import useStore from './store/useStore';
-import { Notification } from './types';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import PhoneFrame from "./components/Phone/PhoneFrame";
+import LockScreen from "./components/Phone/LockScreen";
+import HomeScreen from "./components/Phone/HomeScreen";
+import SettingsPage from "./components/Settings/SettingsPage";
+import NotificationToast from "./components/Notifications/NotificationToast";
+import NotificationDetail from "./components/Notifications/NotificationDetail";
+import useStore from "./store/useStore";
+import { Notification } from "./types";
+import { Analytics } from "@vercel/analytics/next";
 
 function App() {
   const { notifications } = useStore();
   const [activeToast, setActiveToast] = useState<Notification | null>(null);
-  const [lastNotificationId, setLastNotificationId] = useState<string | null>(null);
-  const [selectedNotification, setSelectedNotification] = useState<Notification | null>(null);
+  const [lastNotificationId, setLastNotificationId] = useState<string | null>(
+    null
+  );
+  const [selectedNotification, setSelectedNotification] =
+    useState<Notification | null>(null);
 
   useEffect(() => {
     if (notifications.length > 0) {
@@ -46,7 +50,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <PhoneFrame >
+      <PhoneFrame>
         <div className="relative w-full h-full">
           <Routes>
             <Route path="/" element={<LockScreen />} />
@@ -72,6 +76,7 @@ function App() {
           )}
         </div>
       </PhoneFrame>
+      <Analytics />
     </BrowserRouter>
   );
 }
