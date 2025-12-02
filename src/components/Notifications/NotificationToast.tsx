@@ -154,7 +154,7 @@ const NotificationToast = ({
           <div className="flex-1 min-w-0">
             {/* Title only - one line with stock name, price, and change */}
             <p
-              className={`text-base font-semibold ${changeColor} leading-tight`}
+              className={`text-base font-semibold mt-2 ${changeColor} leading-tight`}
             >
               {formattedTitle}
             </p>
@@ -185,7 +185,7 @@ const NotificationToast = ({
               style.button
             } ${notification.aiSummary ? "cursor-default" : "cursor-pointer"}`}
           >
-            {notification.aiSummary ? style.action : "Read More"}
+            {notification.aiSummary ? style.action : "View Stock"}
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>

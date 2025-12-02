@@ -425,8 +425,7 @@ const SettingsPage = () => {
                     stockId: "NVDA",
                     stockName: "NVIDIA Corporation",
                     title: "Price Alert Triggered",
-                    message:
-                      "NVDA crossed your target price of $150. Current price is $152.34 (+4.2%). Review your position and consider taking action.",
+                    message: "Your alert notification was triggered.",
                     timestamp: new Date(),
                     type: "positive",
                     group: "Tech",
@@ -452,8 +451,7 @@ const SettingsPage = () => {
                     stockId: "TSLA",
                     stockName: "Tesla, Inc.",
                     title: "News Alert",
-                    message:
-                      "Tesla stock dropped 2.1% following reports of production delays. Monitor the situation closely as this may impact your portfolio.",
+                    message: "Your alert notification was triggered.",
                     timestamp: new Date(),
                     type: "negative",
                     group: "Tech",
@@ -479,8 +477,7 @@ const SettingsPage = () => {
                     stockId: "AAPL",
                     stockName: "Apple Inc.",
                     title: "Price Alert Triggered",
-                    message:
-                      "Apple stock is trading at $165.30 with minimal volatility. No immediate action required, continue monitoring.",
+                    message: "Your alert notification was triggered.",
                     timestamp: new Date(),
                     type: "neutral",
                     group: "Growth",
