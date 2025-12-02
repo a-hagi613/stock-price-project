@@ -9,7 +9,7 @@ import NotificationToast from "./components/Notifications/NotificationToast";
 import NotificationDetail from "./components/Notifications/NotificationDetail";
 import useStore from "./store/useStore";
 import { Notification } from "./types";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const { notifications } = useStore();
