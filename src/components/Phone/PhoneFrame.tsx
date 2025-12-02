@@ -13,22 +13,19 @@ interface PhoneFrameProps {
  */
 const PhoneFrame = ({ children }: PhoneFrameProps) => {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center p-8">
-      <div className="flex items-center justify-center">
-        {/* move the entire device frame to the center */}
-        <div className="scale-110 translate-x-6/5">
-          
+    <div className="min-h-screen w-screen flex items-center justify-center p-2 sm:p-4 md:p-8 overflow-x-hidden">
+      {/* Responsive scaling: smaller on mobile, larger on desktop */}
+      <div className="scale-[0.65] sm:scale-75 md:scale-90 lg:scale-100 xl:scale-110 origin-center mx-auto">
         <DeviceFrameset
-            device="iPhone X"
-            color="black"
-            width={450}
-            height={800}
-          >
-            <div className="w-full h-full overflow-hidden bg-white">
-              {children}
-            </div>
-          </DeviceFrameset>
-        </div>
+          device="iPhone X"
+          color="black"
+          width={450}
+          height={800}
+        >
+          <div className="w-full h-full overflow-hidden bg-white">
+            {children}
+          </div>
+        </DeviceFrameset>
       </div>
     </div>
   );
